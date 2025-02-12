@@ -22,16 +22,18 @@ export default function Card(media) {
     ja: "JP",
     hi: "IN",
     ru: "RU",
-    xx: "XX",
     tr: "TR",
     tl: "PH",
   };
+
+  const flagDefault =
+    "https://tse1.mm.bing.net/th?id=OIG3.nv.eeSksGNkqaH276n6X&pid=ImgGn";
 
   const flagImg = flag[media.original_language]
     ? `https://purecatamphetamine.github.io/country-flag-icons/3x2/${
         flag[media.original_language]
       }.svg`
-    : media.original_language;
+    : flagDefault;
 
   return (
     <>

@@ -3,13 +3,20 @@ import { useApiDataContext } from "../contexts/ApiDataContext";
 import Card from "./Card";
 
 export default function CardsList() {
-  const { movies } = useApiDataContext();
+  const { movies, series } = useApiDataContext();
 
   return (
-    <ul>
-      {movies.map((movie) => {
-        return <Card key={movie.id} {...movie} />;
-      })}
-    </ul>
+    <div>
+      <ul>
+        {movies.map((movie) => {
+          return <Card key={movie.id} {...movie} />;
+        })}
+      </ul>
+      <ul>
+        {series.map((serie) => {
+          return <Card key={serie.id} {...serie} />;
+        })}
+      </ul>
+    </div>
   );
 }

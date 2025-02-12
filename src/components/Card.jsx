@@ -1,12 +1,12 @@
-export default function Card(movie) {
+export default function Card(media) {
   return (
     <>
-      <li key={movie.id}>
+      <li key={media.id}>
         <ul>
-          <li>{movie.title}</li>
-          <li>{movie.original_title}</li>
-          <li>{movie.original_language}</li>
-          <li>{movie.overview}</li>
+          <li>{media.title || media.name}</li>
+          <li>{media.original_title || media.original_name}</li>
+          <li>{media.original_language}</li>
+          <li>{media.overview}</li>
         </ul>
       </li>
     </>

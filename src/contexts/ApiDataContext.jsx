@@ -4,10 +4,10 @@ const ApiDataContext = createContext();
 
 const ApiDataProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
-  //   const [series, setSeries] = useState([]);
+  const [series, setSeries] = useState([]);
 
   return (
-    <ApiDataContext.Provider value={{ movies, setMovies }}>
+    <ApiDataContext.Provider value={{ movies, setMovies, series, setSeries }}>
       {children}
     </ApiDataContext.Provider>
   );

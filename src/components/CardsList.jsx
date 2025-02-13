@@ -9,7 +9,7 @@ export default function CardsList({ children, type }) {
   return (
     <div>
       {children}
-      <ul>
+      <ul className="cardlist flex">
         {mediaType.map((media) => {
           return <Card key={media.id} {...media} />;
         })}

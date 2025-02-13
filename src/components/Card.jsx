@@ -1,6 +1,9 @@
 import { flags } from "../data/flags";
+import { useState } from "react";
 
 export default function Card(media) {
+  const [isHovered, setIsHovered] = useState(false);
+
   const flagDefault =
     "https://tse1.mm.bing.net/th?id=OIG3.nv.eeSksGNkqaH276n6X&pid=ImgGn";
 
@@ -28,28 +31,43 @@ export default function Card(media) {
 
   return (
     <>
-      <li className="card" key={media.id}>
-        <ul>
-          <li>Titolo: {media.title || media.name}</li>
-          {/* <li>
-            Titolo originale: {media.original_title || media.original_name}
-          </li>
-          <li>
-            Lingua originale:
-            {flagImg ? (
-              <img
-                className="flag"
-                src={flagImg}
-                alt={media.original_language}
-              />
-            ) : (
-              media.original_language
-            )}{" "}
-          </li>
-          <li>Voto: {voteAverageStars(Math.ceil(media.vote_average / 2))}</li>
-          <img src={`https://image.tmdb.org/t/p/w185/${media.poster_path}`} />
-          <li>Descrizione: {media.overview}</li> */}
-        </ul>
+      <li
+        className="card"
+        key={media.id}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div>
+          <img
+            className={isHovered ? "hidden" : ""}
+            src={
+              media.poster_path
+                ? `https://image.tmdb.org/t/p/w185/${media.poster_path}`
+                : "https://tse1.mm.bing.net/th?id=OIG1.s_jXuVQallLQ5wk4K7qR&pid=ImgGn"
+            }
+          />
+
+          <ul className={isHovered ? "" : "hidden"}>
+            <li>Titolo: {media.title || media.name}</li>
+            <li>
+              Titolo originale: {media.original_title || media.original_name}
+            </li>
+            <li>
+              Lingua originale:
+              {flagImg ? (
+                <img
+                  className="flag"
+                  src={flagImg}
+                  alt={media.original_language}
+                />
+              ) : (
+                media.original_language
+              )}{" "}
+            </li>
+            <li>Voto: {voteAverageStars(Math.ceil(media.vote_average / 2))}</li>
+            <li>Descrizione: {media.overview}</li>
+          </ul>
+        </div>
       </li>
     </>
   );

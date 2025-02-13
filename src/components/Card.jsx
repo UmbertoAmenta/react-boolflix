@@ -35,12 +35,28 @@ export default function Card(media) {
       }.svg`
     : flagDefault;
 
+  const voteAverageStars = (vote) => {
+    if (vote == 0) {
+      return <p>Non disponibile</p>;
+    }
+    let voteStars = [];
+    for (let i = 0; i < vote; i++) {
+      voteStars.push(<i key={i} className="fa-solid fa-star"></i>);
+    }
+    while (voteStars.length < 5) {
+      voteStars.push(
+        <i key={voteStars.length} className="fa-regular fa-star"></i>
+      );
+    }
+    return voteStars;
+  };
+
   return (
     <>
       <li key={media.id}>
         <ul>
-          {/* <li>{media.title || media.name}</li>
-          <li>{media.original_title || media.original_name}</li> */}
+          <li>{media.title || media.name}</li>
+          <li>{media.original_title || media.original_name}</li>
           <li>
             {flagImg ? (
               <img
@@ -52,7 +68,9 @@ export default function Card(media) {
               media.original_language
             )}{" "}
           </li>
-          {/* <li>{media.overview}</li> */}
+          <li>{voteAverageStars(Math.ceil(media.vote_average / 2))}</li>
+          <img src={`https://image.tmdb.org/t/p/w185/${media.poster_path}`} />
+          <li>{media.overview}</li>
         </ul>
       </li>
     </>

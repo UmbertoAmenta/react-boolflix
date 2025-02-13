@@ -2,3 +2,7 @@
   width: 50px;
   aspect-ratio: 3/2;
 }
+
+li > i {
+  color: #ffd43b;
+}

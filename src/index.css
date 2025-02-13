@@ -6,6 +6,12 @@
 }
 
 /* GENERAL */
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   max-width: 1000px;
   margin-left: auto;
@@ -14,6 +20,10 @@
 
 .flex {
   display: flex;
+}
+
+li {
+  list-style: none;
 }
 
 /* HEADER */
@@ -54,12 +64,29 @@ header .flex {
 }
 
 /* MAIN */
+main {
+  background-color: rgb(67, 66, 66);
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+main h2,
+main h3 {
+  padding: 15px;
+  color: white;
+}
+main h3 {
+  text-align: center;
+}
 
 /* Cardlist */
 
 /* Card */
+.card {
+  color: white;
+}
 
-.flag {
+.card .flag {
   width: 50px;
   aspect-ratio: 3/2;
 }

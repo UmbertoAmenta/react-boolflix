@@ -2,19 +2,16 @@ import { useApiDataContext } from "../contexts/ApiDataContext";
 
 import Card from "./Card";
 
-export default function CardsList() {
+export default function CardsList({ children, type }) {
   const { movies, series } = useApiDataContext();
+  const mediaType = type === "movies" ? movies : series;
 
   return (
     <div>
+      {children}
       <ul>
-        {movies.map((movie) => {
-          return <Card key={movie.id} {...movie} />;
-        })}
-      </ul>
-      <ul>
-        {series.map((serie) => {
-          return <Card key={serie.id} {...serie} />;
+        {mediaType.map((media) => {
+          return <Card key={media.id} {...media} />;
         })}
       </ul>
     </div>

@@ -1,37 +1,12 @@
-export default function Card(media) {
-  const flag = {
-    it: "IT",
-    fr: "FR",
-    es: "ES",
-    us: "US",
-    en: "GB",
-    de: "DE",
-    pt: "PT",
-    nl: "NL",
-    be: "BE",
-    se: "SE",
-    ch: "CH",
-    at: "AT",
-    no: "NO",
-    dk: "DK",
-    fi: "FI",
-    ie: "IE",
-    ar: "SA",
-    ko: "KR",
-    cn: "CN",
-    ja: "JP",
-    hi: "IN",
-    ru: "RU",
-    tr: "TR",
-    tl: "PH",
-  };
+import { flags } from "../data/flags";
 
+export default function Card(media) {
   const flagDefault =
     "https://tse1.mm.bing.net/th?id=OIG3.nv.eeSksGNkqaH276n6X&pid=ImgGn";
 
-  const flagImg = flag[media.original_language]
+  const flagImg = flags[media.original_language]
     ? `https://purecatamphetamine.github.io/country-flag-icons/3x2/${
-        flag[media.original_language]
+        flags[media.original_language]
       }.svg`
     : flagDefault;
 
@@ -53,11 +28,14 @@ export default function Card(media) {
 
   return (
     <>
-      <li key={media.id}>
+      <li className="card" key={media.id}>
         <ul>
-          <li>{media.title || media.name}</li>
-          <li>{media.original_title || media.original_name}</li>
+          <li>Titolo: {media.title || media.name}</li>
+          {/* <li>
+            Titolo originale: {media.original_title || media.original_name}
+          </li>
           <li>
+            Lingua originale:
             {flagImg ? (
               <img
                 className="flag"
@@ -68,9 +46,9 @@ export default function Card(media) {
               media.original_language
             )}{" "}
           </li>
-          <li>{voteAverageStars(Math.ceil(media.vote_average / 2))}</li>
+          <li>Voto: {voteAverageStars(Math.ceil(media.vote_average / 2))}</li>
           <img src={`https://image.tmdb.org/t/p/w185/${media.poster_path}`} />
-          <li>{media.overview}</li>
+          <li>Descrizione: {media.overview}</li> */}
         </ul>
       </li>
     </>

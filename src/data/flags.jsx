@@ -1,0 +1,27 @@
+const flags = {
+  fr: "FR",
+  es: "ES",
+  us: "US",
+  en: "GB",
+  de: "DE",
+  pt: "PT",
+  nl: "NL",
+  be: "BE",
+  se: "SE",
+  ch: "CH",
+  at: "AT",
+  no: "NO",
+  dk: "DK",
+  fi: "FI",
+  ie: "IE",
+  ar: "SA",
+  ko: "KR",
+  cn: "CN",
+  ja: "JP",
+  hi: "IN",
+  ru: "RU",
+  tr: "TR",
+  tl: "PH",
+};
+
+export { flags };

@@ -30,6 +30,22 @@ li {
   list-style: none;
 }
 
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-track {
+  background: #555;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: red;
+  cursor: pointer;
+}
+
 /* HEADER */
 header {
   background-color: black;
@@ -87,6 +103,7 @@ main h3 {
 .cardlist {
   overflow-x: auto;
   overflow-y: hidden;
+  justify-content: center;
 }
 /* Card */
 .card > div {

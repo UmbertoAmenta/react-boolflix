@@ -48,9 +48,12 @@ export default function Card(media) {
           />
 
           <ul className={isHovered ? "" : "hidden"}>
-            <li>Titolo: {media.title || media.name}</li>
             <li>
-              Titolo originale: {media.original_title || media.original_name}
+              <em>Titolo:</em> {media.title || media.name}
+            </li>
+            <li>
+              <em>Titolo originale:</em>{" "}
+              {media.original_title || media.original_name}
             </li>
             <li>
               Lingua originale:
@@ -64,8 +67,13 @@ export default function Card(media) {
                 media.original_language
               )}{" "}
             </li>
-            <li>Voto: {voteAverageStars(Math.ceil(media.vote_average / 2))}</li>
-            <li>Descrizione: {media.overview}</li>
+            <li>
+              <em>Voto:</em>{" "}
+              {voteAverageStars(Math.ceil(media.vote_average / 2))}
+            </li>
+            <li>
+              <em>Descrizione:</em> {media.overview}
+            </li>
           </ul>
         </div>
       </li>

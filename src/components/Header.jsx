@@ -3,8 +3,10 @@ import SearchBar from "./SearchBar";
 export default function Header() {
   return (
     <header>
-      <h1>Bool-Flix</h1>
-      <SearchBar />
+      <div className="container flex">
+        <img src="/logo.svg" alt="Bf" />
+        <SearchBar />
+      </div>
     </header>
   );
 }

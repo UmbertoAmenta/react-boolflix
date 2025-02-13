@@ -1,3 +1,64 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* GENERAL */
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+/* HEADER */
+header {
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+header .flex {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Searchbar */
+.searchForm div.flex {
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.searchForm {
+  & input,
+  & button {
+    padding: 5px;
+    background-color: white;
+    border: none;
+  }
+  & input {
+    border-start-start-radius: 10px;
+  }
+  & button {
+    border-end-end-radius: 10px;
+    border-left: 1px dashed black;
+  }
+  & button:hover {
+    cursor: pointer;
+  }
+}
+
+/* MAIN */
+
+/* Cardlist */
+
+/* Card */
+
 .flag {
   width: 50px;
   aspect-ratio: 3/2;

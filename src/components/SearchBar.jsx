@@ -31,14 +31,20 @@ export default function SearchBar() {
   };
 
   return (
-    <form onSubmit={handlerSearch}>
-      <input
-        type="search"
-        placeholder="Cerca..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <button type="submit">Cerca</button>
+    <form className="searchForm flex" onSubmit={handlerSearch}>
+      <div className="flex">
+        <label htmlFor="search">Non sai cosa guardare?</label>
+        <div>
+          <input
+            id="search"
+            type="search"
+            placeholder="Chi cerca..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <button type="submit">...Trova</button>
+        </div>
+      </div>
     </form>
   );
 }
